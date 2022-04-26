@@ -8,6 +8,9 @@
 # Increment the large integer by one and return the resulting array of digits.
 
 
+from unicodedata import digit
+
+
 def plus_one(digits):
     return [int(i) for i in str(int(''.join(map(str, digits)) + 1))]
     
@@ -22,3 +25,17 @@ def plus_one_iterative(digits):
             return digits
             
     return [1] + digits
+
+class Solution:
+    def plus_one_recursive(self, digits):
+        if digits[-1] < 9:
+            digits[-1] += 1
+            return digits
+
+        elif len(digits) == 1 and digits[0] == 9:
+            return [1, 0]
+        
+        else:
+            digits = self.plusOne(digits[:-1]) + [0]
+            return digits
+            
