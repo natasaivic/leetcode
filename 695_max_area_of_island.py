@@ -25,4 +25,4 @@ class Solution:
                 if grid[r][c] == 1:
                     area_islands = max(area_islands, self.dfs(grid, r, c))
                     
-        return area_islands
+        return area_islands   
