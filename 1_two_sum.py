@@ -16,3 +16,18 @@ def twoSum(nums, target):
                 result.append(i)
                 result.append(j)
     return result
+    # return [i, j]
+
+
+def twoSum_hash(nums, target):
+    hashmap = {}
+    for i in range(len(nums)):
+        complement = target - nums[i]
+        if complement in hashmap:
+            return [i, hashmap[complement]]
+        hashmap[nums[i]] = i 
+
+
+nums = [2,7,11,15]
+target = 9
+twoSum_hash(nums, target)
