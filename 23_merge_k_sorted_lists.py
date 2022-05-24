@@ -20,7 +20,12 @@ class ListNode:
     def __init__(self, val = 0):
         self.val = val
         self.next = None
-        
+
+
+# Brute Force
+# Traverse all the linked lists and collect the values of the nodes into an array.
+# Sort the array.
+# Create a new sorted linked list and extend it with the new nodes.
 class Solution:
     def mergeKLists(lists):
         if lists is None: 
@@ -36,8 +41,19 @@ class Solution:
             return
         result.sort()
         head = ListNode()
-        m=head
+        m = head
         for k in result:
             m.next = ListNode(k)
             m = m.next
         return head.next
+
+
+# Complexity Analysis
+# Time complexity: O(NlogN) where N is the total number of nodes.
+# Collecting all the values costs O(N) time.
+# Sorting algorithm costs O(NlogN) time.
+# Iterating for creating the linked list costs O(N) time.
+
+# Space complexity: O(N).
+# Sorting cost O(N) space. 
+# Creating a new linked list costs O(N) space.
