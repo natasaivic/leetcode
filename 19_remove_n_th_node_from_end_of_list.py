@@ -31,7 +31,7 @@ class Solution1:
             second.next = second.next.next
         return head
 
-#      s   f
+#      s   f We want to stop right before the node that we want to remove. 
 # [1,2,3,4,5]
 class Solution2:
     def removeNthFromEnd(self, head, n):

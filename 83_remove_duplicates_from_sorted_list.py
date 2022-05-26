@@ -8,7 +8,9 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-
+# Traverse the list from the head node. While traversing, compare each node with its next node. 
+# If the data of the next node is the same as the current node then delete the next node. 
+# Before we delete a node, we need to store the next pointer of the node. 
 class Solution:
     def removeDuplicates(self, head):
         if head is None:
