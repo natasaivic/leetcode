@@ -8,17 +8,25 @@ class ListNode:
         self.val = value
         self.next = next
 
+# Copy into array and then use two pointer technique
 class Solution:
     def isPalindrome(self, head):
-        stack = []
+        arr = []
         current = head
         while current is not None:
-            stack.append(current.value) 
+            arr.append(current.value) 
             current = current.next
         
         current = head
         while current is not None:
-            if current.value != stack.pop():
+            if current.value != arr.pop():
                 return False
             current = current.next
         return True
+
+# Complexity Analysis
+# Time complexity: O(n)
+# Space complexity: O(n)
+
+# Improve space complexity
+# Reverse Second Half In-place
